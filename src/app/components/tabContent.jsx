@@ -51,7 +51,7 @@ export default function TabContent({ activeTab }) {
         <div className="w-full h-px md:w-px md:h-[255px] bg-gray-300 mx-4 my-4 md:my-0"></div>
 
         {/* Additional Information */}
-        <div className="md:w-1/2 flex flex-col gap-4 pl-4 md:pl-6">
+        <div className="md:w-1/2 flex flex-col gap-4 pt-8 pl-4 md:pl-6">
           <p className="text-sm text-gray-600">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
