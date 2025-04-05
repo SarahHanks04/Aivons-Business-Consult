@@ -7,11 +7,11 @@ export default function TabContent({ activeTab }) {
         {/* Features List */}
         <div className="md:w-1/2 flex flex-col gap-4 pl-4 md:pl-[4rem]">
           {/* Highest Success Rates */}
-          <div className="flex items-start">
-            <div className="flex items-center text-gray-700 p-2 md:p-4">
+          <div className="flex items-start pt-6">
+            <div className="flex items-center text-gray-700 p-4 md:p-4">
               <CircleCheckBig
-                className="text-blue-600 p-1 bg-[#EBF1FF]"
-                size={20}
+                className="text-blue p-1 bg-[#EBF1FF]"
+                size={24}
               />
             </div>
             <div className="pt-3">
@@ -28,10 +28,10 @@ export default function TabContent({ activeTab }) {
 
           {/* We Build Experience */}
           <div className="flex items-start">
-            <div className="flex items-center text-gray-700 p-2 md:p-4">
+            <div className="flex items-center text-gray-700 p-4 md:p-4">
               <CircleCheckBig
-                className="text-blue-600 p-1 bg-[#EBF1FF]"
-                size={20}
+                className="text-blue p-1 bg-[#EBF1FF]"
+                size={24}
               />
             </div>
             <div className="pt-3">
@@ -76,7 +76,7 @@ export default function TabContent({ activeTab }) {
 
   // Placeholder content for empty tabs
   return (
-    <div className="container mx-auto px-4 py-8 md:py-[6rem] text-center">
+    <div className="container mx-auto px-4 py-[6rem] text-center">
       <p className="text-gray-600">
         Content for {activeTab} tab coming soon...
       </p>
