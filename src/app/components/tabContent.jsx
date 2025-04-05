@@ -65,7 +65,7 @@ export default function TabContent({ activeTab }) {
             ].map((item, index) => (
               <li key={index} className="relative pl-4">
                 <span className="absolute left-0 text-gray-600">-</span>
-                <span className="ml-2">{item}</span>
+                <span className="ml-1">{item}</span>
               </li>
             ))}
           </ul>
