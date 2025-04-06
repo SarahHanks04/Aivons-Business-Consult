@@ -141,7 +141,7 @@ export default function Header() {
                 <span
                   className={`px-3 py-2 transition-colors ${
                     pathname === link.href
-                      ? "text-red-600  font-bold"
+                      ? "text-green-600  font-bold"
                       : "text-white"
                   }`}
                 >
@@ -278,7 +278,6 @@ export default function Header() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            // className="block py-1"
                             className={`block py-1 ${
                               pathname === item.href
                                 ? "text-red-600 font-bold"
@@ -296,7 +295,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     className={`block ${
-                      pathname === link.href ? "text-red-600 font-bold" : ""
+                      pathname === link.href ? "text-green-600 font-bold" : ""
                     }`}
                   >
                     {link.name}
