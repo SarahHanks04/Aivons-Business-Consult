@@ -1,7 +1,6 @@
 "use client";
 
 import { Check } from "lucide-react";
-// import FAQItem from "../components/FAQItem";
 import { faqData, infoPoints } from "../constant/faqDatas";
 import FAQItem from "../components/faqItem";
 
