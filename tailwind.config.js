@@ -11,9 +11,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#3A5B22", 
+        primary: "#3A5B22",
         secondary: "#F5F5F5",
         blue: "#3C72FC",
+        "custom-peach": "#FDD2BF",
+        "custom-red": "#BF4040",
       },
       animation: {
         float: "float 6s ease-in-out infinite",

@@ -23,7 +23,7 @@ const caseStudies = [
 
 export default function CaseShop() {
   return (
-    <section className="bg-[#F2F4F8] py-16 px-6 md:px-16">
+    <section className="bg-[#F2F4F8] pt-[18rem] md:pt-[10rem] pb-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
           NEW CASE STUDIES
@@ -41,13 +41,14 @@ export default function CaseShop() {
             >
               <div className="flex flex-col items-center justify-start text-white h-full group">
                 <div className="pt-[10rem] w-full h-full bg-[#726F84] group-hover:bg-blue transition-colors duration-300 flex flex-col items-center">
-                  <Image
-                    src={study.icon}
-                    alt={`${study.title} icon`}
-                    width={40}
-                    height={40}
-                    className="mb-6"
-                  />
+                  <div className="relative w-10 h-10 mb-6">
+                    <Image
+                      src={study.icon}
+                      alt={`${study.title} icon`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <p className="text-[10px] uppercase tracking-widest">
                     {study.subtitle}
                   </p>

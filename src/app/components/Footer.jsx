@@ -123,7 +123,7 @@ export default function Footer() {
                 Welcome to our consultancy agency. Lorem simply text amet cing
                 elit.
               </p>
-              <p className="mt-4 text-gray-400 flex items-center">
+              {/* <p className="mt-4 text-gray-400 flex items-center">
                 <Image
                   src="/IconPhone.svg"
                   alt="Phone Number"
@@ -131,6 +131,20 @@ export default function Footer() {
                   height={16}
                 />
                 <span className="ml-2">+92 666 888 0000</span>
+              </p> */}
+              <p className="mt-4 text-gray-400 flex items-center">
+                <Image
+                  src="/IconPhone.svg"
+                  alt="Phone Number"
+                  width={16}
+                  height={16}
+                />
+                <a
+                  href="tel:+926668880000"
+                  className="ml-2 text-gray-400 hover:text-white hover:underline"
+                >
+                  +92 666 888 0000
+                </a>
               </p>
               <p className="mt-4 text-gray-400 flex items-center">
                 <Image

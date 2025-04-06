@@ -58,6 +58,7 @@ export default function HeroSection() {
           alt="Unsplash Hero Image"
           width={500}
           height={500}
+          priority
           className="w-full max-w-sm md:max-w-md object-contain rounded-xl shadow-lg"
         />
       </motion.div>

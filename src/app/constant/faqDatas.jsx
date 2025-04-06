@@ -26,4 +26,9 @@ export const faqData = [
     answer:
       "Start by analyzing your current processes and identifying areas for improvement. Our consulting services provide actionable steps to optimize performance and increase profitability.",
   },
+  {
+    question: "Why Choose Our Consulting Services?",
+    answer:
+      "Our proven track record and client-focused approach set us apart. We deliver customized solutions that drive results, ensuring your business thrives in a competitive market.",
+  },
 ];
