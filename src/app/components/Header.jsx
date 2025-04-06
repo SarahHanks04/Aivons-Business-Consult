@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const pathname = usePathname();
 
@@ -28,13 +28,13 @@ export default function Header() {
     { name: "Marketing", href: "/services/marketing" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setIsScrolled(window.scrollY > 10);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -60,6 +60,7 @@ export default function Header() {
               src="/aivonLogo.png"
               alt="Company Logo"
               fill
+              sizes="48px"
               className="object-cover"
               priority
             />
@@ -134,6 +135,7 @@ export default function Header() {
                 height={20}
               />
             </Link>
+
             <Link href="https://www.linkedin.com">
               <Image
                 src="/llinkedin.svg"
@@ -164,9 +166,11 @@ export default function Header() {
 
           <span className="h-12 w-px bg-gray-300 mx-2" />
 
-          {/* Contact Info */}
-          <p className="text-white font-medium">
-            Need help? <br /> +92 666 888 0000
+          <p className="text-white font-medium text-[16px]">
+            Need help?{" "}
+            <a href="tel:+926668880000" className="hover:underline text-sm">
+              +92 666 888 0000
+            </a>
           </p>
         </div>
 
@@ -269,7 +273,15 @@ export default function Header() {
                 </div>{" "}
                 {/* <Search className="mx-auto h-5 w-5" /> */}
                 <hr />
-                <p>Need help? +92 666 888 0000</p>
+                <p className="text-white font-medium">
+                  Need help?{" "}
+                  <a
+                    href="tel:+926668880000"
+                    className="hover:underline text-sm"
+                  >
+                    +92 666 888 0000
+                  </a>
+                </p>
               </div>
             </div>
           </motion.nav>

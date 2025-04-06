@@ -33,14 +33,15 @@ export default function ExperienceCard({ title, link }) {
         </Link>
       </div>
 
-      {/* Image (Right Side) */}
-      <Image
-        src="/bitbucket.svg"
-        alt="Bucket Icon"
-        width={60}
-        height={60}
-        className="pt-[2rem]"
-      />
+      {/* Image */}
+      <div className="relative w-[60px] h-[60px] pt-[2rem]">
+        <Image
+          src="/bitbucket.svg"
+          alt="Bucket Icon"
+          fill
+          className="object-contain"
+        />
+      </div>
     </motion.div>
   );
 }

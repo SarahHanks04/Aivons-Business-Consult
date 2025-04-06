@@ -31,27 +31,12 @@ export default function HeroSection() {
         </Link>
       </motion.div>
 
-      {/* Right Side - Image */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="relative mt-10 md:mt-0 w-full max-w-md md:max-w-lg flex justify-center"
-      >
-        <Image
-          src={unsplashHeroImage}
-          alt="Unsplash Hero Image"
-          width={500}
-          height={500}
-          className="w-full max-w-sm md:max-w-md object-contain rounded-xl shadow-lg"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-50"></div>
-      </motion.div> */}
+      {/* Image */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative mt-10 md:mt-0 w-full max-w-md md:max-w-lg flex justify-center"
+        className="relative mt-0 md:mt-0 w-full max-w-md md:max-w-lg flex justify-center"
       >
         <Image
           src={unsplashHeroImage}
