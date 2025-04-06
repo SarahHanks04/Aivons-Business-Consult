@@ -26,15 +26,17 @@ export default function LeadingSection() {
                   {/* Play Button */}
                   <button
                     onClick={() => setIsPlaying(true)}
-                    className="absolute top-[11%] left-[8%] transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-blue flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                    className="absolute top-[11%] left-[10%] transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-blue flex items-center justify-center transition-transform duration-300 hover:scale-110"
                   >
-                    <svg
-                      className="w-8 h-8 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <div className="text-white flex items-center justify-center">
+                      <Image
+                        src="/PlayIcon.svg"
+                        alt="Play Video"
+                        width={10}
+                        height={10}
+                        className="text-white object-cover"
+                      />
+                    </div>
                   </button>
                 </div>
               ) : (
