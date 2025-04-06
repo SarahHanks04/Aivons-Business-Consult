@@ -8,7 +8,7 @@ import { FooterData } from "@/app/constant/FooterDatas";
 import { useState } from "react";
 import Modal from "../constant/Modal";
 
-// Animation variants
+// Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -123,15 +123,7 @@ export default function Footer() {
                 Welcome to our consultancy agency. Lorem simply text amet cing
                 elit.
               </p>
-              {/* <p className="mt-4 text-gray-400 flex items-center">
-                <Image
-                  src="/IconPhone.svg"
-                  alt="Phone Number"
-                  width={16}
-                  height={16}
-                />
-                <span className="ml-2">+92 666 888 0000</span>
-              </p> */}
+
               <p className="mt-4 text-gray-400 flex items-center">
                 <Image
                   src="/IconPhone.svg"
