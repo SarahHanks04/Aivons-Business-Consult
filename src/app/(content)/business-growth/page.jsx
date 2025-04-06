@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import BusinessTab from "../components/businessTab";
-import TabContent from "../components/tabContent";
+import BusinessTab from "../../components/businessTab";
+import TabContent from "../../components/tabContent";
 
 // Data for the stats cards
 const statsData = [

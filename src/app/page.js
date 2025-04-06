@@ -1,11 +1,11 @@
-import LeadingSection from "./blog/page";
-import BusinessStats from "./business-growth/page";
-import CaseShop from "./case-shop/page";
+import LeadingSection from "./(blog)/leading-section/page";
+import BusinessStats from "./(content)/business-growth/page";
+import CaseShop from "./(blog)/new-case/page";
 import HeroSection from "./components/HeroSection";
 import Experience from "./experience/page";
 import FAQSection from "./faq/page";
-import Mission from "./mission/page";
-import Testimonial from "./testimonials/page";
+import Mission from "./(services)/mission/page";
+import Testimonial from "./(content)/testimonials/page";
 
 export default function Home() {
   return (

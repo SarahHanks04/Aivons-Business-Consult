@@ -18,10 +18,11 @@ export default function TabContent({ activeTab }) {
               <h4 className="text-lg font-semibold text-[#0F0D1D]">
                 Highest Success Rates
               </h4>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum nibh vel velit auctor aliquet. Aenean <br />{" "}
-                sollicitudin, lorem quis bibendum auctor, nisi <br /> elit
-                consequat ipsum, nec sagittis sem nibh <br /> id elit.
+              <p className="text-sm text-gray-600 pt-3">
+                Our proven strategies consistently deliver outstanding growth
+                results. Aivons Consulting empowers businesses with tailored
+                solutions, driving measurable success and sustainable progress
+                every step of the way.
               </p>
             </div>
           </div>
@@ -38,10 +39,11 @@ export default function TabContent({ activeTab }) {
               <h4 className="text-lg font-semibold text-[#0F0D1D]">
                 We Build Experience
               </h4>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum nibh vel velit auctor aliquet. Aenean <br />{" "}
-                sollicitudin, lorem quis bibendum auctor, nisi <br /> elit
-                consequat ipsum, nec sagittis sem nibh <br /> id elit.
+              <p className="text-sm text-gray-600 pt-3">
+                We craft exceptional experiences to elevate your business
+                potential. Aivons Consulting designs innovative approaches,
+                ensuring lasting impact and competitive advantage for your
+                company’s future.
               </p>
             </div>
           </div>
@@ -53,9 +55,10 @@ export default function TabContent({ activeTab }) {
         {/* Additional Information */}
         <div className="md:w-1/2 flex flex-col gap-4 pt-8 pl-4 md:pl-6">
           <p className="text-sm text-gray-600">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look believable.
+            Aivons offers diverse strategies to accelerate your business growth
+            effectively, though many companies struggle with inconsistent
+            results due to outdated methods, lack of focus, or unclear goals
+            that fail to inspire confidence.
           </p>
           <ul className="text-sm text-gray-600 space-y-2">
             {[

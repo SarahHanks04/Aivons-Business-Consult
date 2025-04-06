@@ -21,7 +21,7 @@ const caseStudies = [
   },
 ];
 
-export default function CaseShop() {
+export default function NewCase() {
   return (
     <section className="bg-[#F2F4F8] pt-[18rem] md:pt-[10rem] pb-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">

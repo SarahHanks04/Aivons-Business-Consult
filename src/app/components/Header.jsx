@@ -4,49 +4,69 @@ import { Menu, X, Search, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // const [isScrolled, setIsScrolled] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services", hasDropdown: true },
-    { name: "Pages", href: "/pages" },
-    { name: "Case Shop", href: "/shop" },
+    { name: "Pages", href: "/experience" },
+    { name: "Case Shop", href: "/faq" },
     { name: "Blog", href: "/blog" },
     { name: "Content", href: "/content" },
   ];
 
   const serviceDropdownItems = [
-    { name: "Web Development", href: "/services/web-development" },
-    { name: "UI/UX Design", href: "/services/ui-ux-design" },
-    { name: "Marketing", href: "/services/marketing" },
+    {
+      name: "Leadership",
+      href: "/services/leadership",
+    },
+    { name: "Good collaboration", href: "/services/good-collaboration" },
+    { name: "Free Communication", href: "/services/free-communication" },
   ];
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 10);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  // searchable pages
+  const searchablePages = [
+    ...navLinks.map((link) => ({ name: link.name, href: link.href })),
+    ...serviceDropdownItems,
+  ];
 
   useEffect(() => {
     setMobileMenuOpen(false);
     setServicesDropdown(false);
   }, [pathname]);
 
+  // Search submission
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const matchedPage = searchablePages.find((page) =>
+      page.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    if (matchedPage) {
+      router.push(matchedPage.href);
+      setSearchQuery("");
+      setSearchOpen(false);
+    } else {
+      console.log("No match found for:", searchQuery);
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`fixed w-full z-50 bg-[#707070] shadow-md transition-all duration-300`}
+      className={`fixed w-full z-50 bg-[#707070] border-b border-gray-400 shadow-md transition-all duration-300`}
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
@@ -66,23 +86,30 @@ export default function Header() {
             />
           </Link>
         </motion.div>
+        {/* <span className="h-12 w-px bg-gray-300 mr-10" /> */}
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4">
+        <nav className="hidden md:flex items-center space-x-3">
           {navLinks.map((link) =>
             link.hasDropdown ? (
-              <div key={link.name} className="relative group">
-                <button
-                  onClick={() => setServicesDropdown(!servicesDropdown)}
-                  className="flex items-center text-white px-3 py-2"
+              <div
+                key={link.name}
+                className="relative group"
+                onMouseEnter={() => setServicesDropdown(true)}
+                onMouseLeave={() => setServicesDropdown(false)}
+              >
+                <span
+                  className={`flex items-center text-white px-3 py-2 cursor-pointer ${
+                    pathname === link.href ? "text-green-500 font-bold" : ""
+                  }`}
                 >
                   {link.name}
                   {servicesDropdown ? (
-                    <ChevronUp className="ml-2 h-4 w-4" />
+                    <ChevronUp className="ml-2 h-4 w-4 text-blue" />
                   ) : (
-                    <ChevronDown className="ml-2 h-4 w-4" />
+                    <ChevronDown className="ml-2 h-4 w-4 text-blue" />
                   )}
-                </button>
+                </span>
                 <AnimatePresence>
                   {servicesDropdown && (
                     <motion.div
@@ -96,7 +123,11 @@ export default function Header() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                          className={`block px-4 py-2 text-gray-700 hover:bg-gray-200 ${
+                            pathname === item.href
+                              ? "text-green-400 font-bold"
+                              : ""
+                          }`}
                         >
                           {item.name}
                         </Link>
@@ -108,7 +139,7 @@ export default function Header() {
             ) : (
               <Link key={link.name} href={link.href} className="relative group">
                 <span
-                  className={`px-3 py-2 transition-colors text-white ${
+                  className={`px-3 py-2 transition-colors ${
                     pathname === link.href
                       ? "text-red-600  font-bold"
                       : "text-white"
@@ -126,7 +157,7 @@ export default function Header() {
           <span className="h-12 w-px bg-gray-300 mx-2" />
 
           {/* Social Icons */}
-          <div className="flex space-x-6">
+          <div className="flex space-x-5">
             <Link href="https://www.instagram.com">
               <Image
                 src="/instagramm.svg"
@@ -159,10 +190,37 @@ export default function Header() {
 
           <span className="h-12 w-px bg-gray-300 mx-2" />
 
-          {/* Search Icon */}
-          <button aria-label="Search">
-            <Search className="h-5 w-5 text-white hover:text-primary" />
-          </button>
+          {/* Search Icon with Dropdown */}
+          <div className="relative">
+            <button
+              aria-label="Search"
+              onClick={() => setSearchOpen((prev) => !prev)}
+            >
+              <Search className="h-5 w-5 text-white hover:text-primary" />
+            </button>
+            <AnimatePresence>
+              {searchOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-2 w-64 shadow-md rounded-md p-2"
+                >
+                  <form onSubmit={handleSearch}>
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search pages..."
+                      className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring-0"
+                      autoFocus
+                    />
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <span className="h-12 w-px bg-gray-300 mx-2" />
 
@@ -209,9 +267,9 @@ export default function Header() {
                     >
                       {link.name}
                       {servicesDropdown ? (
-                        <ChevronUp className="ml-2" />
+                        <ChevronUp className="ml-2 text-blue" />
                       ) : (
-                        <ChevronDown className="ml-2" />
+                        <ChevronDown className="ml-2 text-blue" />
                       )}
                     </button>
                     {servicesDropdown && (
@@ -220,7 +278,12 @@ export default function Header() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="block py-1"
+                            // className="block py-1"
+                            className={`block py-1 ${
+                              pathname === item.href
+                                ? "text-red-600 font-bold"
+                                : ""
+                            }`}
                           >
                             {item.name}
                           </Link>
@@ -229,7 +292,13 @@ export default function Header() {
                     )}
                   </div>
                 ) : (
-                  <Link key={link.name} href={link.href} className="block">
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`block ${
+                      pathname === link.href ? "text-red-600 font-bold" : ""
+                    }`}
+                  >
                     {link.name}
                   </Link>
                 )

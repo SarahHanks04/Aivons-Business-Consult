@@ -3,11 +3,10 @@
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import TestimonialCard from "../components/testimonialCard";
+import TestimonialCard from "../../components/testimonialCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { testimonialData } from "../constant/testimonialDatas";
-
+import { testimonialData } from "../../constant/testimonialDatas";
 
 // Arrow components for the carousel
 const PrevArrow = ({ onClick }) => (
@@ -54,11 +53,11 @@ export default function Testimonial() {
     ],
   };
 
-  // Reference to the slider for arrow navigation
+  // Slider for arrow navigation
   const [sliderRef, setSliderRef] = useState(null);
 
   return (
-    <section className="bg-[#F2F4F8] py-16">
+    <section className="bg-[#F2F4F8] pb-16 pt-[6rem] md:pt-[8rem]">
       <div className="container mx-auto px-[2rem] md:px-[4rem]">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Headings */}

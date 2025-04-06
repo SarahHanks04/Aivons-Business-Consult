@@ -6,7 +6,7 @@ import { faqData, infoPoints } from "../constant/faqDatas";
 
 export default function FAQSection() {
   return (
-    <section className="bg-white py-16 w-full">
+    <section className="bg-white py-20 w-full">
       <main className="container mx-auto px-4 md:px-14 w-full">
         {/* Header */}
         <div className="text-center mb-12">
