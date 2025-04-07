@@ -19,7 +19,7 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Cards Grid */}
+        {/* Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
           initial="hidden"
@@ -34,7 +34,7 @@ export default function Experience() {
           ))}
         </motion.div>
 
-        {/* Partner Carousel */}
+        {/* Partners Carousel */}
         <div className="mt-12 pt-8">
           <div className="relative flex items-center justify-center px-3">
             <div className=" inset-x-0 h-px bg-gray-700 w-full z-10"></div>

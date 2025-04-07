@@ -19,7 +19,7 @@ export default function ExperienceCard({ title, link }) {
       whileHover="hover"
       className="bg-black text-white p-[3rem] rounded-lg flex justify-between items-center"
     >
-      {/* Text Content (Left Side) */}
+      {/* Text Content */}
       <div className="flex flex-col uppercase">
         <h3 className="text-[20px] font-semibold leading-1.25">
           <span className="block">{firstWord}</span>

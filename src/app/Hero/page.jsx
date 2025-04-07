@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import unsplashHeroImage from "../../../public/unsplashHeroImage.jpg";
 
 export default function HeroSection() {
   return (
@@ -39,7 +38,7 @@ export default function HeroSection() {
         className="relative mt-0 md:mt-0 w-full max-w-md md:max-w-lg flex justify-center"
       >
         <Image
-          src={unsplashHeroImage}
+          src="/unsplashHeroImage"
           alt="Unsplash Hero Image"
           width={500}
           height={500}

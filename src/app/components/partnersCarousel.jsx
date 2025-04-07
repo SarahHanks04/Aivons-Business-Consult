@@ -48,7 +48,7 @@ export default function PartnerCarousel({ logos }) {
     }, 1000);
   };
 
-  // Handle keyboard navigation
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowLeft") {
@@ -62,7 +62,7 @@ export default function PartnerCarousel({ logos }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Handle dot click to jump to a specific logo
+  // Dot click to jump to a specific logo
   const goToLogo = (index) => {
     setIsTransitioning(true);
     setTimeout(() => {
@@ -89,7 +89,7 @@ export default function PartnerCarousel({ logos }) {
 
   return (
     <div className="flex flex-col items-center mt-8">
-      {/* Carousel with Arrows and Logos */}
+      {/* Carousel */}
       <div
         className="w-full overflow-hidden relative"
         onMouseEnter={handleMouseEnter}

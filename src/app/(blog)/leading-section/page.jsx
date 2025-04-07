@@ -57,7 +57,7 @@ export default function LeadingSection() {
           </div>
 
           {/* Text Content */}
-          <div className="md:w-1/2 flex flex-col gap-4 pt-o md:pt-12">
+          <div className="md:w-1/2 flex flex-col gap-4 pt-0 md:pt-12 px-4 md:px-0">
             <h2 className="text-3xl md:text-4xl font-bold uppercase text-[#0F0D1D]">
               We’re Leading in <br />
               the Market

@@ -57,7 +57,7 @@ export default function Header() {
       setSearchQuery("");
       setSearchOpen(false);
     } else {
-      console.log("No match found for:", searchQuery);
+      return <p className="text-blue">No match found for {searchQuery}</p>;
     }
   };
 
