@@ -15,7 +15,7 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
         className="text-center md:text-left max-w-lg"
       >
-        <p className="text-sm uppercase tracking-widest text-gray-400 pb-4">
+        <p className="text-sm pt-8 md:pt-0 uppercase tracking-widest text-gray-400 pb-4">
           Welcome to Codeshaper
         </p>
         <h1 className="text-5xl uppercase md:text-6xl font-bold mt-2 leading-tight">
