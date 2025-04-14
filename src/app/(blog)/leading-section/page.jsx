@@ -137,7 +137,9 @@ export default function LeadingSection() {
                 height={20}
               />
               <div>
-                <p className="text-sm pt-6 text-gray-700">Have any question? Give us a call </p>
+                <p className="text-sm pt-6 text-gray-700">
+                  Have any question? Give us a call{" "}
+                </p>
                 <a
                   href="tel:+9266888000"
                   className="font-medium hover:underline text-gray-700"
